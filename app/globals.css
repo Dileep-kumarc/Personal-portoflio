@@ -6,13 +6,15 @@
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
+  --foreground: 0 0% 10.2%;
+  /* #1A1A1A */
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
+  --card-foreground: 0 0% 10.2%;
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 346.8 77.2% 49.8%;
-  --primary-foreground: 355.7 100% 97.3%;
+  --popover-foreground: 0 0% 10.2%;
+  --primary: 354 70% 50%;
+  /* #DC2626 Red */
+  --primary-foreground: 0 0% 98%;
   --secondary: 240 4.8% 95.9%;
   --secondary-foreground: 240 5.9% 10%;
   --muted: 240 4.8% 95.9%;
@@ -23,8 +25,17 @@
   --destructive-foreground: 0 0% 98%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --ring: 346.8 77.2% 49.8%;
+  --ring: 354 70% 50%;
   --radius: 0.5rem;
+  --spotlight-color: 0, 0, 0;
+  --spotlight-opacity: 0.2;
+
+  /* Pastel Colors */
+  --pastel-blue: 210 100% 96%;
+  --pastel-pink: 330 100% 96%;
+  --pastel-green: 150 100% 96%;
+  --pastel-purple: 270 100% 96%;
+  --pastel-amber: 40 100% 96%;
 }
 
 .dark {
@@ -47,6 +58,8 @@
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
   --ring: 346.8 77.2% 49.8%;
+  --spotlight-color: 255, 255, 255;
+  --spotlight-opacity: 0.1;
 }
 
 @theme inline {
@@ -74,6 +87,14 @@
   --radius-sm: calc(var(--radius) - 4px);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-outfit);
+
+  /* Pastel Utilities */
+  --color-pastel-blue: hsl(var(--pastel-blue));
+  --color-pastel-pink: hsl(var(--pastel-pink));
+  --color-pastel-green: hsl(var(--pastel-green));
+  --color-pastel-purple: hsl(var(--pastel-purple));
+  --color-pastel-amber: hsl(var(--pastel-amber));
 }
 
 html {
@@ -114,4 +135,61 @@ body {
 .dark .glass {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bg-grid-white\/\[0\.02\] {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Light mode dot pattern */
+.bg-dot-black\/\[0\.2\] {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+  }
+}
+
+.animate-meteor-effect {
+  animation: meteor 5s linear infinite;
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 60s linear infinite;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --blue-300: #93c5fd;
+  --violet-200: #ddd6fe;
+  --blue-400: #60a5fa;
 }

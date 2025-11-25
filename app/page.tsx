@@ -1,19 +1,17 @@
-import { Hero } from "@/components/sections/hero"
-import { About } from "@/components/sections/about"
-import { Skills } from "@/components/sections/skills"
-import { Projects } from "@/components/sections/projects"
-import { Experience } from "@/components/sections/experience"
-import { Contact } from "@/components/sections/contact"
+import { HeroNew } from "@/components/sections/hero-new"
+import { BentoContent } from "@/components/sections/bento-content"
+import { ProjectsNew } from "@/components/sections/projects-new"
+import { ExperienceNew } from "@/components/sections/experience-new"
+import { ContactNew } from "@/components/sections/contact-new"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-0">
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
+    <div className="flex flex-col">
+      <HeroNew />
+      <BentoContent />
+      <ProjectsNew />
+      <ExperienceNew />
+      <ContactNew />
     </div>
   )
 }

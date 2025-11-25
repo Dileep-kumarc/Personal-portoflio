@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
+import { FloatingDock } from "@/components/layout/floating-dock";
+import { FooterNew } from "@/components/layout/footer-new";
 import { CustomCursor } from "@/components/ui/custom-cursor";
+import { NoiseOverlay } from "@/components/ui/noise-overlay";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +15,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -38,12 +45,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <NoiseOverlay />
           <CustomCursor />
-          <main className="min-h-screen">
+          <AuroraBackground className="dark:hidden" />
+          <main className="min-h-screen font-sans">
             {children}
           </main>
-          <Footer />
+          <FloatingDock />
+          <FooterNew />
         </ThemeProvider>
       </body>
     </html>

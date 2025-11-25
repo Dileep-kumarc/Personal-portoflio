@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import { Container } from "@/components/ui/container"
 
 export function Footer() {
@@ -22,10 +22,6 @@ export function Footer() {
                         <Link href="https://www.linkedin.com/in/dileep-kumar-c-3a5278268/" target="_blank" className="p-2 rounded-full hover:bg-accent transition-colors">
                             <Linkedin className="h-5 w-5" />
                             <span className="sr-only">LinkedIn</span>
-                        </Link>
-                        <Link href="#" className="p-2 rounded-full hover:bg-accent transition-colors">
-                            <Twitter className="h-5 w-5" />
-                            <span className="sr-only">Twitter</span>
                         </Link>
                         <Link href="mailto:dileepkmrc@gmail.com" className="p-2 rounded-full hover:bg-accent transition-colors">
                             <Mail className="h-5 w-5" />
